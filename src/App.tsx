@@ -7,8 +7,8 @@ import { useState } from "react";
 
 function App() {
   const [showSettings, setShowSettings] = useState(false);
-  const [workMinutes, setWorkMinutes] = useState(0.1);
-  const [breakMinutes, setBreakMinutes] = useState(0.2);
+  const [workMinutes, setWorkMinutes] = useState(45);
+  const [breakMinutes, setBreakMinutes] = useState(15);
   const [rounds, setRounds] = useState(1);
 
   return (
