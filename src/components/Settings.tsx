@@ -2,6 +2,7 @@ import { useContext } from "react";
 import ReactSlider from "react-slider";
 import { BackButton } from "./BackButton";
 import SettingsContext from "./SettingsContext";
+import { Plus, Minus } from "phosphor-react";
 
 export function Settings() {
   const context = useContext(SettingsContext);
@@ -27,7 +28,30 @@ export function Settings() {
         min={1}
         max={120}
       />
-
+      <label>Rounds:</label>
+      <div className="flex flex-row items-center justify-start gap-x-2 w-full mt-2 text-6xl">
+        <p className="w-14 flex items-center justify-center">
+          {context.rounds}
+        </p>
+        <div className="flex flex-col gap-y-0.5 items-center justify-center">
+          <button
+            onClick={() => context.setRounds(context.rounds + 1)}
+            className="w-7 h-7 bg-white bg-opacity-20 flex flex-row items-center justify-center rounded-md opacity-70
+            duration-200 hover:opacity-100"
+            disabled={context.rounds >= 10}
+          >
+            <Plus color="white" size={24} />
+          </button>
+          <button
+            onClick={() => context.setRounds(context.rounds - 1)}
+            className="w-7 h-7 bg-white bg-opacity-20 flex flex-row items-center justify-center rounded-md opacity-70
+            duration-200 hover:opacity-100"
+            disabled={context.rounds <= 1}
+          >
+            <Minus color="white" size={24} />
+          </button>
+        </div>
+      </div>
       <BackButton />
     </div>
   );

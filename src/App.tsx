@@ -7,11 +7,12 @@ import { useState } from "react";
 
 function App() {
   const [showSettings, setShowSettings] = useState(false);
-  const [workMinutes, setWorkMinutes] = useState(45);
-  const [breakMinutes, setBreakMinutes] = useState(15);
+  const [workMinutes, setWorkMinutes] = useState(0.1);
+  const [breakMinutes, setBreakMinutes] = useState(0.2);
+  const [rounds, setRounds] = useState(1);
 
   return (
-    <div className="w-scren h-screen flex flex-col justify-center items-center bg-background">
+    <div className="w-scren h-screen flex flex-col justify-center items-center bg-background font-Gloock">
       <SettingsContext.Provider
         value={{
           workMinutes,
@@ -20,6 +21,8 @@ function App() {
           setWorkMinutes,
           setBreakMinutes,
           setShowSettings,
+          rounds,
+          setRounds,
         }}
       >
         {showSettings ? <Settings /> : <Timer />}

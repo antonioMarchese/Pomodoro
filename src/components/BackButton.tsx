@@ -7,7 +7,7 @@ export function BackButton() {
   return (
     <button
       onClick={() => context.setShowSettings(!context.showSettings)}
-      className="w-fit py-1 px-2 flex items-center justify-center gap-x-1 bg-white bg-opacity-20 rounded-lg cursor-pointer"
+      className="w-fit py-1 px-2 mt-4 flex items-center justify-center gap-x-1 bg-white bg-opacity-20 rounded-lg cursor-pointer opacity-70 duration-300 hover:opacity-100"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

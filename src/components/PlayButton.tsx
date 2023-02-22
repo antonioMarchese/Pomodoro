@@ -1,8 +1,19 @@
-import { PlayCircle } from "phosphor-react";
+import { MutableRefObject } from "react";
 
-export function PlayButton() {
+export interface WorkButtonProps {
+  setIsPaused: (value: boolean) => void;
+  isPausedRef: MutableRefObject<boolean>;
+}
+
+export function PlayButton({ setIsPaused, isPausedRef }: WorkButtonProps) {
   return (
-    <button className="bg-transparent rounded-full text-white inline-block mt-2">
+    <button
+      onClick={() => {
+        setIsPaused(false);
+        isPausedRef.current = false;
+      }}
+      className="bg-transparent rounded-full text-white inline-block mt-2"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-24 w-24"
